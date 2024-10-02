@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FilmeService } from '../../services/filme.service';
 import { ListagemFilme } from '../../models/listagem-filme.model';
-import { formatDate, NgClass, NgForOf } from '@angular/common';
+import { formatDate, NgClass, NgForOf, NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-listagem-filmes',
   standalone: true,
-  imports: [NgForOf, NgClass],
+  imports: [NgForOf, NgClass, NgIf, RouterLink],
   templateUrl: './listagem-filmes.component.html',
   styleUrl: './listagem-filmes.component.scss'
 })
+
 export class ListagemFilmesComponent implements OnInit {
   public filmes: ListagemFilme[];
 
@@ -42,7 +44,7 @@ export class ListagemFilmesComponent implements OnInit {
     if (numeroNota > 0 && numeroNota <= 30) return 'app-borda-nota-mais-baixa';
     else if (numeroNota > 30 && numeroNota <= 50) return 'app-borda-nota-baixa';
     else if (numeroNota > 50 && numeroNota <= 75) return 'app-borda-nota-media';
-    else if (numeroNota > 75) return 'app-borda-nota-media';
+    else if (numeroNota > 75) return 'app-borda-nota-alta';
     else return 'app-borda-nota-null';
   }
 

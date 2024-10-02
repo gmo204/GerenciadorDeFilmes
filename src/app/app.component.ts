@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ListagemFilmesComponent } from "./components/listagem-filmes/listagem-filmes.component";
+import { ListagemFilmesComponent } from './components/listagem-filmes/listagem-filmes.component';
 
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
